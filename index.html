@@ -56,14 +56,17 @@
 
 <!-- AUDITORIA DE SANGRE -->
 <section id="auditoria" class="audit">
+  <div class="audit-bg" aria-hidden="true"><div class="bg-layer"></div><div class="bg-layer"></div></div>
+  <div class="audit-shade" aria-hidden="true"></div>
+  <div class="audit-scan" aria-hidden="true"></div>
   <div class="wrap audit-grid">
     <div class="audit-panel" id="audit-panel" aria-live="polite">
-      <!-- rellenado por js/audit.js -->
       <p class="kick">Auditoría de Sangre</p>
       <h2>¿Qué heredaste?</h2>
-      <p>D.I.O.S. va a revisar tu árbol genealógico desde 1726. Vas a responder por cinco antepasados tuyos. Cada decisión que tomaron sigue creciendo hoy.</p>
+      <p>D.I.O.S. va a revisar tu árbol genealógico desde 1726.</p>
     </div>
     <div class="audit-tree">
+      <div class="tree-head"><span>ÁRBOL GENEALÓGICO</span><span id="tree-status">EN ESPERA</span></div>
       <svg id="tree" viewBox="0 0 420 560" role="img" aria-label="Tu árbol genealógico, de 1726 a 2778"></svg>
     </div>
   </div>
