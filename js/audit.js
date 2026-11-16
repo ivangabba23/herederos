@@ -135,6 +135,34 @@
   const narrow = () => matchMedia('(max-width: 860px)').matches;
   const sleep = ms => new Promise(r => setTimeout(r, reduced() ? Math.min(ms, 60) : ms));
 
+  /* ---------- pantalla completa ---------- */
+  let lastFocus = null;
+  function openFull() {
+    if (section.classList.contains('is-full')) return;
+    lastFocus = document.activeElement;
+    section.classList.add('is-full');
+    document.body.classList.add('audit-open');
+    section.scrollTop = 0;
+  }
+  function closeFull() {
+    if (!section.classList.contains('is-full')) return;
+    section.classList.remove('is-full');
+    document.body.classList.remove('audit-open');
+    section.scrollIntoView({ block: 'start' });
+    if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+  }
+  document.getElementById('audit-close')?.addEventListener('click', closeFull);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeFull(); });
+  document.querySelectorAll('[data-audit-open]').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault(); openFull();
+    setTimeout(() => panel.querySelector('#audit-name')?.focus({ preventScroll: true }), 400);
+  }));
+  // los enlaces internos dentro de la auditoría cierran la pantalla completa antes de navegar
+  section.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#"]');
+    if (a && section.classList.contains('is-full')) { section.classList.remove('is-full'); document.body.classList.remove('audit-open'); }
+  });
+
   /* ---------- pantallas ---------- */
   function intro() {
     answers = [];
@@ -151,7 +179,7 @@
         <input id="audit-name" name="audit-name" maxlength="24" placeholder="Como te llama tu familia" value="${esc(name)}">
       </form>
       <div class="res-actions"><button class="btn btn-red" id="audit-start" type="button">Iniciar auditoría</button></div>`;
-    const go = () => { name = (panel.querySelector('#audit-name').value || '').trim().slice(0, 24) || 'Sin nombre'; ask(0); };
+    const go = () => { name = (panel.querySelector('#audit-name').value || '').trim().slice(0, 24) || 'Sin nombre'; openFull(); ask(0); };
     panel.querySelector('#audit-start').addEventListener('click', go);
     panel.querySelector('#audit-form').addEventListener('submit', e => { e.preventDefault(); go(); });
   }
