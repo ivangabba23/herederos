@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap">
-<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
 
@@ -295,9 +295,21 @@
   </div>
 </footer>
 
+<div class="stage" id="stage" hidden role="dialog" aria-label="Un día en 2778">
+  <video class="stage-vid" muted playsinline preload="auto"></video>
+  <div class="stage-shade" aria-hidden="true"></div>
+  <div class="stage-flash" aria-hidden="true"></div>
+  <div class="stage-top">
+    <div class="stage-chap" id="stage-chap"></div>
+    <div class="stage-ctl"><button class="audit-close" id="stage-mute" type="button" aria-pressed="false">Sonido: sí</button><button class="audit-close" id="stage-close" type="button">Salir ✕</button></div>
+  </div>
+  <div class="stage-ui" id="stage-ui" aria-live="polite"></div>
+</div>
+
 <div class="blackout" id="blackout" aria-hidden="true"><span>D.I.O.S. FUERA DE LÍNEA</span></div>
 
-<script src="js/main.js?v=3"></script>
-<script src="js/audit.js?v=3"></script>
+<script src="js/main.js?v=5"></script>
+<script src="js/audit.js?v=5"></script>
+<script src="js/day.js?v=5"></script>
 </body>
 </html>

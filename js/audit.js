@@ -295,9 +295,9 @@
         ${table}
         <p class="dios-says">${greeting}</p>
         <div class="res-actions">
+          <button class="btn btn-red" id="res-day" type="button">Vivir un día en 2778 →</button>
           <button class="btn" id="res-copy" type="button">Copiar resultado</button>
           <button class="btn btn-ghost" id="res-again" type="button">Auditar otro linaje</button>
-          <a class="btn btn-red" href="#corto">Ver el corto</a>
         </div>
         <span class="mono mut" id="res-msg" style="font-size:.72rem;min-height:1.2em" aria-live="polite"></span>
       </div>`;
@@ -305,6 +305,7 @@
     if (!merit) window.drawBarcode(panel.querySelector('#res-bc'), hash(sid));
     if (narrow()) setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'start' }), 900);
     panel.querySelector('#res-again').addEventListener('click', intro);
+    panel.querySelector('#res-day').addEventListener('click', () => window.HEREDEROS_DAY && window.HEREDEROS_DAY.start({ merit, sid, nice, name: id }));
     panel.querySelector('#res-copy').addEventListener('click', () => {
       const txt = merit
         ? `D.I.O.S. auditó mi linaje: ${id}, Linaje de Mérito. Árbol limpio. Por ahora. #Herederos`
@@ -332,5 +333,6 @@
     panel.querySelector('.dios-says').insertAdjacentHTML('beforebegin', `<p class="mut" style="font-size:.92rem;margin:0">Un pariente lejano de ${c.year} nunca pagó una multa de quince días. Igual que Lía, tu árbol estaba limpio hasta que dejó de estarlo.</p>`);
   }
 
+  window.HEREDEROS.restartAudit = () => { openFull(); intro(); };
   intro();
 })();
