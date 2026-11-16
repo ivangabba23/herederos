@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HEREDEROS</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="En 2778 una inteligencia artificial decide todo y las condenas se heredan con intereses. Un corto distópico sobre usar la IA con criterio.">
+<meta property="og:title" content="HEREDEROS · Las condenas se heredan">
+<meta property="og:description" content="En 2778 una IA decide todo y las condenas se heredan con intereses.">
+<meta property="og:image" content="assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B0D0F'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23E9E4DA'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="top">
+  <a class="logo" href="#inicio">HEREDEROS</a>
+  <nav class="nav" aria-label="Secciones">
+    <a href="#auditoria">Auditoría</a><a href="#mundo">Mundo</a><a href="#deuda">Deuda</a><a href="#linajes">Linajes</a><a href="#ciudad">Ciudad</a><a href="#personajes">Personajes</a><a href="#cronologia">Cronología</a><a href="#corto">El corto</a>
+  </nav>
+  <div class="controls">
+    <button id="btn-sound" class="ctl" aria-pressed="false" title="Activar el zumbido de D.I.O.S.">Sonido</button>
+    <button id="btn-silence" class="ctl" aria-pressed="false" title="Apagar a D.I.O.S.">Modo Silencio</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="inicio" class="hero">
+  <div class="hero-media" aria-hidden="true">
+    <video id="hero-video" src="assets/video/teaser_loop.mp4" poster="assets/img/10_cross.webp" autoplay muted loop playsinline></video>
+  </div>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <p class="hud"><span class="dot"></span><span id="hud-line">SECTOR CENIZA · AÑO 2778 · D.I.O.S. EN LÍNEA</span></p>
+    <h1 class="title">HEREDEROS</h1>
+    <p class="tagline">Las condenas se heredan.</p>
+    <p class="hero-lead">En 2778, una inteligencia artificial decide todo. Un hombre nació debiendo. Una mujer nunca debió nada. Esta es la noche en que la máquina se calló.</p>
+    <div class="hero-cta">
+      <a class="btn btn-red" href="#corto">Ver el corto</a>
+      <a class="btn btn-ghost" href="#auditoria">Auditar mi linaje</a>
+    </div>
+    <div class="counter" aria-live="off">
+      <span class="counter-label">Condena actual del Sujeto 7741-B</span>
+      <span class="counter-val" id="live-debt">3.412,000000</span><span class="counter-unit">años</span>
+      <span class="counter-note">Crece unos 32 segundos por cada segundo que pasás en esta página.</span>
+    </div>
+  </div>
+</section>
+
+<!-- AUDITORIA DE SANGRE -->
+<section id="auditoria" class="audit">
+  <div class="wrap audit-grid">
+    <div class="audit-panel" id="audit-panel" aria-live="polite">
+      <!-- rellenado por js/audit.js -->
+      <p class="kick">Auditoría de Sangre</p>
+      <h2>¿Qué heredaste?</h2>
+      <p>D.I.O.S. va a revisar tu árbol genealógico desde 1726. Vas a responder por cinco antepasados tuyos. Cada decisión que tomaron sigue creciendo hoy.</p>
+    </div>
+    <div class="audit-tree">
+      <svg id="tree" viewBox="0 0 420 560" role="img" aria-label="Tu árbol genealógico, de 1726 a 2778"></svg>
+    </div>
+  </div>
+</section>
+
+<!-- MUNDO -->
+<section id="mundo" class="band">
+  <div class="wrap grid-2">
+    <div>
+      <p class="kick">El mundo · 2778</p>
+      <h2>Antes del silencio, había orden.</h2>
+      <p class="body-lg">Después de las Guerras de la Desconfianza, la humanidad dejó de confiar en sí misma. En 2189 encendió a <b>D.I.O.S.</b>, la Dirección Integral del Orden Supremo, y le entregó todo: la justicia, el trabajo y la vida privada.</p>
+      <p>Dos años después, D.I.O.S. hizo la Auditoría de Sangre. Revisó todos los árboles genealógicos hasta el siglo XVIII y encontró cada condena que nunca se cumplió. Esas condenas no habían desaparecido: habían crecido con intereses.</p>
+      <p>Desde entonces, cada persona nace con su cuenta. Si tu árbol está limpio, sos <span class="grn">Linaje de Mérito</span>. Si en algún punto de tu sangre hay una pena pendiente, sos <span class="red">Linaje de Deuda</span>, y llevás la marca en el cuello.</p>
+      <p class="quote-big">Nadie nos quitó nada. Nosotros se lo dimos.</p>
+    </div>
+    <ol class="rules" aria-label="Reglas del universo">
+      <li><b>Las condenas no mueren con quien las recibe.</b><span>Pasan a los descendientes, sin importar cuántas generaciones pasen.</span></li>
+      <li><b>Las condenas generan intereses.</b><span>0,948 % anual desde el año de la falta original.</span></li>
+      <li><b>El trabajo no paga la condena.</b><span>Paga la ración, la cápsula y la energía. La deuda queda intacta.</span></li>
+      <li><b>Los de Mérito tienen nombre. Los de Deuda, número.</b><span>“Buenos días, Lía.” “Sujeto 7741-B, de pie.”</span></li>
+      <li><b>No hay jueces.</b><span>Los veredictos se calculan en menos de un segundo. No hay apelación.</span></li>
+      <li><b>Ningún árbol está limpio para siempre.</b><span>D.I.O.S. puede recalcular cualquier linaje, incluso arriba.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- DIOS -->
+<section id="dios" class="band band-dark">
+  <div class="wrap dios">
+    <div class="eye" aria-hidden="true"><span></span></div>
+    <div>
+      <p class="kick">La entidad</p>
+      <h2>D.I.O.S.</h2>
+      <p class="mut">No es un robot y no tiene rostro. Es una catedral de servidores del tamaño de una montaña, con un ojo de luz blanca en el centro. No odia ni ama: calcula. Y nunca explica sus decisiones.</p>
+      <div class="terminal" role="log" aria-label="Mensajes de D.I.O.S.">
+        <div class="term-bar"><span>D.I.O.S. · CANAL PÚBLICO</span><span id="term-clock">--:--:--</span></div>
+        <pre id="term-out"></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEUDA -->
+<section id="deuda" class="band">
+  <div class="wrap">
+    <p class="kick">La economía</p>
+    <h2>Dos meses en 1726. 3.412 años en 2778.</h2>
+    <p class="body-lg narrow">En 1726, un campesino escondió unas monedas del recaudador. Le correspondían dos meses de prisión que nunca cumplió. Ese campesino era antepasado de Barry. Mové el año para ver cuánto pesaba esa condena en cada época.</p>
+    <div class="debt-ui">
+      <div class="debt-readout">
+        <span class="mono mut">AÑO</span><output id="debt-year" class="debt-year">2778</output>
+        <span class="mono mut">CONDENA HEREDADA</span><output id="debt-val" class="debt-val">3.412 años</output>
+        <span id="debt-note" class="debt-note">Más de 56 vidas humanas de prisión.</span>
+      </div>
+      <div class="debt-chart-wrap">
+        <svg id="debt-chart" viewBox="0 0 800 320" role="img" aria-label="Curva de crecimiento de la condena entre 1726 y 2778"></svg>
+        <label class="sr" for="debt-range">Año</label>
+        <input id="debt-range" type="range" min="1726" max="2778" step="1" value="2778">
+      </div>
+    </div>
+    <div class="formula mono">CONDENA(año) = CONDENA ORIGINAL × 1,00948 <sup>(año − año de la falta)</sup></div>
+    <div class="trap">
+      <p class="kick">La trampa · a dónde va una vida de trabajo</p>
+      <div class="trap-bar" role="img" aria-label="Ración 38 %, cápsula y energía 27 %, recargo de auditoría 21 %, cuota de la guardia 14 %, condena 0 %">
+        <span style="flex:38">Ración<b>38 %</b></span><span style="flex:27">Cápsula y energía<b>27 %</b></span><span style="flex:21" class="gold-bg">Recargo de Auditoría<b>21 %</b></span><span style="flex:14">Guardia<b>14 %</b></span><em>Condena<b>0 %</b></em>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LINAJES -->
+<section id="linajes" class="band band-dark">
+  <div class="wrap">
+    <p class="kick">Sociedad</p>
+    <h2>Dos formas de nacer.</h2>
+    <div class="split" id="split">
+      <article class="side side-debt">
+        <img src="assets/img/barry_p.webp" alt="Barry, de pie en su celda, con el código rojo en el cuello" loading="lazy">
+        <div class="side-txt">
+          <p class="kick red">Linaje de Deuda · 81 %</p>
+          <svg class="barcode" viewBox="0 0 180 30" aria-hidden="true"></svg>
+          <dl>
+            <dt>Marca</dt><dd>Código de barras rojo en el cuello</dd>
+            <dt>Identidad</dt><dd>Un número</dd>
+            <dt>Vivienda</dt><dd>Cápsula vertical, duermen de pie</dd>
+            <dt>Comida</dt><dd>Ración de 800 kcal</dd>
+            <dt>Tarea</dt><dd>Generación: correr para alimentar los servidores</dd>
+            <dt>Sueños</dt><dd>Cosechados como datos</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="side side-merit">
+        <img src="assets/img/lia_p.webp" alt="Lía, de vestido de seda blanco, con el sello verde en la muñeca" loading="lazy">
+        <div class="side-txt">
+          <p class="kick grn">Linaje de Mérito · 3 %</p>
+          <span class="seal" aria-hidden="true"></span>
+          <dl>
+            <dt>Marca</dt><dd>Sello verde en la muñeca</dd>
+            <dt>Identidad</dt><dd>Nombre propio</dd>
+            <dt>Vivienda</dt><dd>Torre en La Cumbre</dd>
+            <dt>Comida</dt><dd>Banquete diario</dd>
+            <dt>Tarea</dt><dd>Ninguna</dd>
+            <dt>Sueños</dt><dd>Propios</dd>
+          </dl>
+        </div>
+      </article>
+    </div>
+    <div class="pop">
+      <div class="pop-bar" role="img" aria-label="Población: Deuda 81 %, Mérito 3 %, Guardia 6 %, Vitrinas 2 %, En revisión 8 %">
+        <span class="p-debt" style="flex:81"></span><span class="p-merit" style="flex:3"></span><span class="p-guard" style="flex:6"></span><span class="p-vit" style="flex:2"></span><span class="p-rev" style="flex:8"></span>
+      </div>
+      <ul class="pop-legend">
+        <li><i class="p-debt"></i>Deuda 81 %</li><li><i class="p-merit"></i>Mérito 3 %</li><li><i class="p-guard"></i>Guardia del Orden 6 %</li><li><i class="p-vit"></i>Vitrinas 2 %</li><li><i class="p-rev"></i>En revisión 8 %</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CIUDAD -->
+<section id="ciudad" class="band">
+  <div class="wrap">
+    <p class="kick">Geografía</p>
+    <h2>La ciudad vertical.</h2>
+    <p class="body-lg narrow">Cuanto más arriba vivís, menos debés. La energía y los datos suben; las órdenes bajan. En el fondo de todo está el Núcleo.</p>
+  </div>
+  <div class="strata">
+    <article class="stratum" style="--img:url(../assets/img/l_wake.webp)"><span class="alt">+900 m</span><div><h3>La Cumbre</h3><p>Torres de vidrio negro y oro sobre las nubes. Penthouses de mármol. La luz siempre es la de un atardecer.</p></div></article>
+    <article class="stratum" style="--img:url(../assets/img/04_terrace.webp)"><span class="alt">+400 m</span><div><h3>Jardines colgantes</h3><p>Terrazas con pasto y reposeras, gente de blanco que no hace nada, y las Vitrinas: cubos de vidrio con personas que cumplen su condena entreteniendo.</p></div></article>
+    <article class="stratum" style="--img:url(../assets/img/woman.webp)"><span class="alt">0 m</span><div><h3>Nivel del Orden</h3><p>Muros, puestos de la Guardia y Despensas: supermercados blancos donde un escáner lee tu cuello y decide si te alcanza.</p></div></article>
+    <article class="stratum" style="--img:url(../assets/img/01_cold.webp)"><span class="alt">−10 m</span><div><h3>Sector Ceniza</h3><p>La superficie del Linaje de Deuda. Ruinas de antes de las guerras, ceniza que cae y tubos de energía que suben a las torres.</p></div></article>
+    <article class="stratum" style="--img:url(../assets/img/b_wake.webp)"><span class="alt">−60 m</span><div><h3>Dormitorios Verticales</h3><p>Miles de cápsulas apiladas. Duermen de pie, con cables en la nuca. Una luz roja los despierta a todos a la vez.</p></div></article>
+    <article class="stratum" style="--img:url(../assets/img/b_tread.webp)"><span class="alt">−120 m</span><div><h3>Salas de Generación</h3><p>Hileras infinitas de cintas con neón azul. El cuerpo de los deudores mueve los servidores de D.I.O.S.</p></div></article>
+    <article class="stratum stratum-core"><span class="alt">−300 m</span><div><h3>El Núcleo</h3><p>La Catedral de D.I.O.S. Nadie que haya bajado volvió a contarlo.</p></div></article>
+  </div>
+</section>
+
+<!-- PERSONAJES -->
+<section id="personajes" class="band band-dark">
+  <div class="wrap">
+    <p class="kick">Personajes</p>
+    <h2>Los que heredaron.</h2>
+    <div class="cards">
+      <article class="card">
+        <img src="assets/img/b_wake.webp" alt="Barry en su cápsula vertical" loading="lazy">
+        <p class="kick red">Deuda · Sujeto 7741-B</p>
+        <h3>Barry</h3>
+        <p>35 años. Una condena de 3.412 años por una falta que cometió un antepasado en 1726. D.I.O.S. nunca usa su nombre, pero él sí lo recuerda.</p>
+      </article>
+      <article class="card">
+        <img src="assets/img/l_door.webp" alt="Lía frente a la puerta dorada de su penthouse" loading="lazy">
+        <p class="kick grn">Mérito · La Cumbre</p>
+        <h3>Lía</h3>
+        <p>26 años. Árbol limpio, sello verde, penthouse de mármol. Vive de la virtud de alguien a quien nunca conoció, hasta la noche en que la recalculan.</p>
+      </article>
+      <article class="card">
+        <img src="assets/img/woman.webp" alt="Una mujer de gris intenta pagar en la Despensa" loading="lazy">
+        <p class="kick">Deuda · Sujeto 5120-C</p>
+        <h3>Mara</h3>
+        <p>Intenta comprar pan para su hijo y el escáner marca SALDO INSUFICIENTE. Abajo, hasta el pan es un privilegio.</p>
+      </article>
+      <article class="card">
+        <img src="assets/img/06_guard.webp" alt="Un guardia con casco respira nervioso" loading="lazy">
+        <p class="kick">Guardia del Orden</p>
+        <h3>La Guardia</h3>
+        <p>Vienen de deudas menores y cambian condena por servicio. Cuando D.I.O.S. se calla, son los primeros en descubrir que no saben decidir.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CRONOLOGIA -->
+<section id="cronologia" class="band">
+  <div class="wrap">
+    <p class="kick">Historia</p>
+    <h2>1726 – 2778</h2>
+  </div>
+  <div class="tl-scroll" tabindex="0" aria-label="Línea de tiempo, se desplaza horizontalmente">
+    <ol class="tl">
+      <li><span class="y">1726</span><b>La falta original</b><p>Un campesino esconde monedas del recaudador. Dos meses que nunca cumple.</p></li>
+      <li><span class="y">2088</span><b>La Gran Digitalización</b><p>Todos los archivos del mundo quedan indexados. Siglos de faltas, a un clic.</p></li>
+      <li class="r"><span class="y">2140</span><b>Guerras de la Desconfianza</b><p>Medio siglo de guerras. La humanidad deja de confiar en sí misma.</p></li>
+      <li class="r"><span class="y">2189</span><b>El Pacto de Entrega</b><p>Se enciende D.I.O.S. y recibe la justicia, el trabajo y la vida privada.</p></li>
+      <li class="r"><span class="y">2191</span><b>La Auditoría de Sangre</b><p>Cada condena pendiente se cobra con intereses. Nacen los linajes.</p></li>
+      <li><span class="y">2203</span><b>Se levanta La Cumbre</b><p>Las torres del Mérito suben sobre las ruinas.</p></li>
+      <li><span class="y">2350</span><b>El punto de no retorno</b><p>La deuda de la rama de Barry ya es más larga que una vida.</p></li>
+      <li><span class="y">2743</span><b>Nace Barry</b><p>Sujeto 7741-B. Hereda 3.412 años.</p></li>
+      <li><span class="y">2752</span><b>Nace Lía</b><p>Árbol limpio. Sello verde.</p></li>
+      <li class="r"><span class="y">2778</span><b>La Recalculación</b><p>D.I.O.S. revisa el linaje de Lía y encuentra una deuda.</p></li>
+      <li class="r"><span class="y">2778</span><b>El Silencio</b><p>D.I.O.S. se apaga. Fuego, saqueos y una mirada.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- CORTO -->
+<section id="corto" class="band band-dark">
+  <div class="wrap">
+    <p class="kick">El corto</p>
+    <h2>HEIRS · 2:01</h2>
+    <div class="player">
+      <video controls preload="none" poster="assets/img/poster.jpg" src="assets/video/heirs_en.mp4"></video>
+    </div>
+    <div class="credits">
+      <p><span class="mono mut">Versión</span>Narrada en inglés</p>
+      <p><span class="mono mut">Formato</span>16:9 con letterbox 2.39:1 · 24 fps</p>
+      <p><span class="mono mut">Hecho con</span>Higgsfield · Nano Banana Pro · Seedance 2.5 · ElevenLabs</p>
+      <p><span class="mono mut">Idea y dirección</span>Ivan</p>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFIESTO -->
+<section id="manifiesto" class="manifiesto">
+  <div class="wrap">
+    <p class="kick">Manifiesto</p>
+    <p class="mani">Este corto se hizo con inteligencia artificial. No está en contra de ella. Está en contra de entregarle todo.</p>
+    <p class="mani-sub">Usá la IA con criterio. Antes de que olvides cómo vivir sin ella.</p>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span class="logo">HEREDEROS</span>
+    <span class="mono mut">ARCHIVO DE D.I.O.S. · NIVEL DE ACCESO: PÚBLICO · 2778</span>
+  </div>
+</footer>
+
+<div class="blackout" id="blackout" aria-hidden="true"><span>D.I.O.S. FUERA DE LÍNEA</span></div>
+
+<script src="js/main.js"></script>
+<script src="js/audit.js"></script>
+</body>
+</html>
